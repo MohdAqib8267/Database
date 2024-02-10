@@ -23,6 +23,11 @@ In this, the number of records in the index table is same as the number of recor
 It needs more space to store index record itself. The index records have the search key and a pointer to the actual record on the disk
 ![dbms-indexing-in-dbms_3](https://github.com/MohdAqib8267/Database/assets/106628860/a0f61e20-72c8-4311-a505-f56c53d079ae)
 
+##### Sparse index
+In the data file, index record appears only for a few items. Each item points to a block.
+In this, instead of pointing to each record in the main table, the index points to the records in the main table in a gap.
+![dbms-indexing-in-dbms_4](https://github.com/MohdAqib8267/Database/assets/106628860/34c85ec7-41bf-4cd3-a86b-c70f88bb9001)
+
 #### Clustering Index
 A clustered index can be defined as an ordered data file. Sometimes the index is created on non-primary key columns which may not be unique for each record.
 In this case, to identify the record faster, we will group two or more columns to get the unique value and create index out of them. This method is called a clustering index.

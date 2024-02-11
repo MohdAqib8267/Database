@@ -69,3 +69,9 @@ OLAP stands for OnLine Analytical Processing, and represents databases that work
 
 OLTP stands for OnLine Transaction Processing, and represents databases used for transactional data (inserts and updates), such as websites and applications.
 <img width="515" alt="Screenshot 2024-02-11 131125" src="https://github.com/MohdAqib8267/Database/assets/106628860/6a8e2445-7de6-45f8-97c8-e55413ae7df4">
+
+### B+ Tree
+The B+ tree is a balanced binary search tree. It follows a multi-level index format.
+In the B+ tree, leaf nodes denote actual data pointers. B+ tree ensures that all leaf nodes remain at the same height.
+In the B+ tree, the leaf nodes are linked using a link list. Therefore, a B+ tree can support random access as well as sequential access.
+![dbms-b-plus-tree](https://github.com/MohdAqib8267/Database/assets/106628860/5ff62116-8745-492e-ac94-448b568840fa)

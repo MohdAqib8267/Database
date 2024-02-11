@@ -34,3 +34,38 @@ In this case, to identify the record faster, we will group two or more columns t
 The records which have similar characteristics are grouped, and indexes are created for these group.
 Example: suppose a company contains several employees in each department. Suppose we use a clustering index, where all employees which belong to the same Dept_ID are considered within a single cluster, and index pointers point to the cluster as a whole. Here Dept_Id is a non-unique key.
 ![dbms-indexing-in-dbms_6](https://github.com/MohdAqib8267/Database/assets/106628860/35a6cb43-783f-40f3-a048-1147c7b698d0)
+
+#### Secondary Index
+In the sparse indexing, as the size of the table grows, the size of mapping also grows. These mappings are usually kept in the primary memory so that address fetch should be faster. Then the secondary memory searches the actual data based on the address got from mapping. If the mapping size grows then fetching the address itself becomes slower. In this case, the sparse index will not be efficient. To overcome this problem, secondary indexing is introduced. <br/>
+
+In secondary indexing, to reduce the size of mapping, another level of indexing is introduced. In this method, the huge range for the columns is selected initially so that the mapping size of the first level becomes small. Then each range is further divided into smaller ranges. The mapping of the first level is stored in the primary memory, so that address fetch is faster. The mapping of the second level and actual data are stored in the secondary memory (hard disk).
+![dbms-indexing-in-dbms_7](https://github.com/MohdAqib8267/Database/assets/106628860/ce94e5bc-ae69-4b5c-9f10-7391b959c915)
+
+## What Is a Data Warehouse?
+A data warehouse is a type of database that’s designed for reporting and analysis of a company’s data. It collects data from one or many sources, restructures it in a specific way, and allows business users to analyse and visualise the data.
+#### Why Do We Need a Data Warehouse?
+You’ve probably heard of databases that are used for storing data for applications or websites. These databases specialise in recording transactional data: things that happen during the operation of a business. Some examples are:
+
+>Hotel reservations
+>Airline bookings
+>Student course enrolments
+>Posts on a forum
+>Sign-ups and sales on an eCommerce website
+
+##### If we have these databases, why do we need a data warehouse?
+Why don’t we just run analytics on the normal database?
+<br/>
+The main reason is performance.
+##### So, the two main reasons to use a data warehouse are performance-related:
+
+> Allow business users to analyse data quickly using a specialised database design
+> Prevent the main transactional database from slowing down due to data analysis
+#### Data Warehouse vs Database (OLAP vs OLTP)
+There are many differences between a traditional database that you might use for a website or application and a data warehouse.
+
+Two terms you might see when referring to these databases are OLAP and OLTP.
+
+OLAP stands for OnLine Analytical Processing, and represents databases that work like a data warehouse: focused on analysis instead of inserts and updates.
+
+OLTP stands for OnLine Transaction Processing, and represents databases used for transactional data (inserts and updates), such as websites and applications.
+<img width="515" alt="Screenshot 2024-02-11 131125" src="https://github.com/MohdAqib8267/Database/assets/106628860/6a8e2445-7de6-45f8-97c8-e55413ae7df4">
